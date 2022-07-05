@@ -2,11 +2,11 @@ import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
-const Header = () => {
+const Header = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <TouchableOpacity >
+                <TouchableOpacity onPress={()=>navigation.push("newNote")}>
                     <Entypo name="new-message" size={20} color="#2e2e2e" />
                 </TouchableOpacity>
                 <Text style={styles.headerText}> Note</Text>

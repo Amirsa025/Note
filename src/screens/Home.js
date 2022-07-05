@@ -1,11 +1,11 @@
 import React from 'react';
-import {StyleSheet, Text, View} from "react-native";
+import {Button, StyleSheet, Text, View} from "react-native";
 import Header from "../component/Header/header";
 
-const Home = () => {
+const Home = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <Header/>
+            <Header navigation={navigation}/>
         </View>
     );
 };
