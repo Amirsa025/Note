@@ -13,7 +13,8 @@ export default function App() {
               <Stack.Screen name="Home" component={Home}  options={
                   option
               } />
-              <Stack.Screen name="newNote"  options={{
+              <Stack.Screen name="newNote"
+                            options={{
                   title: 'Home',
                   headerStyle: {
                       backgroundColor: '#ffd95a',
@@ -26,7 +27,7 @@ export default function App() {
                       TextAlign: 'center'
                   },
               }}>
-                  {props => <CreateNote {...props}  />}
+                  {props => <CreateNote {...props}   />}
               </Stack.Screen>
 
           </Stack.Navigator>
