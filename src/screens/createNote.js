@@ -10,26 +10,24 @@ import {
     TouchableOpacity,
     View
 } from 'react-native';
-
+import {useNote} from "../context/NoteProvider"
 const CreateNote = ({navigation}) => {
+    const {Data ,setData} = useNote()
     const [note, setNote] = React.useState("")
     const handleInput = (enterText) => setNote(enterText)
-    const [saveData, setSaves] = React.useState([])
 
     const SaveNote =()=>{
         if (note === '') {
             Alert.alert('TextInput is Empty, Please Enter Some Value To Continue...');
         }
         else {
-            saveData.push(note.toString());
+            setData([...Data,{text:note,id:Math.random().toString()}]);
             Alert.alert('Data Added Successfully...');
-            console.log(saveData);
-            setNote(" ")
-
+            navigation.goBack()
+            setNote("")
         }
-
-
     }
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>

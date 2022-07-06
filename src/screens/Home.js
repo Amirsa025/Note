@@ -1,11 +1,16 @@
 import React from 'react';
-import {Button, StyleSheet, Text, View} from "react-native";
+import {Button, FlatList, StyleSheet, Text, View} from "react-native";
 import Header from "../component/Header/header";
+import {useNote} from "../context/NoteProvider";
+import Note from "./Note";
+import AllNote from "../component/AllNote/AllNote";
 
 const Home = ({navigation}) => {
+    const {Data ,setData} = useNote();
     return (
         <View style={styles.container}>
             <Header navigation={navigation}/>
+            <AllNote Data={Data}/>
         </View>
     );
 };
@@ -13,8 +18,7 @@ const Home = ({navigation}) => {
 export default Home;
 const styles = StyleSheet.create({
     container : {
-        flex : 1,
-        backgroundColor:"#fadc95",
+        backgroundColor:"#f6f1e0",
         height : "100%",
     }
 })
