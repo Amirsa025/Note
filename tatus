@@ -1,0 +1,29 @@
+[33mcommit 1e7bfbc5d6e376a85f7d56cd18dd454349243ba5[m[33m ([m[1;36mHEAD -> [m[1;32mHome[m[33m, [m[1;31morigin/Home[m[33m)[m
+Author: amirsa025 <amirsaki06@gmail.com>
+Date:   Wed Jul 6 17:17:30 2022 +0430
+
+    feature-NoteList-complate
+
+[33mcommit 69e79237424d675999f48831ebfc18772df19d9d[m[33m ([m[1;31morigin/createNote[m[33m, [m[1;32mcreateNote[m[33m)[m
+Author: amirsa025 <amirsaki06@gmail.com>
+Date:   Tue Jul 5 22:26:48 2022 +0430
+
+    complate create a note
+
+[33mcommit 56d6e691060fc4caa700391f6fa554d50e905789[m[33m ([m[1;31morigin/header[m[33m, [m[1;32mheader[m[33m)[m
+Author: amirsa025 <amirsaki06@gmail.com>
+Date:   Tue Jul 5 13:18:10 2022 +0430
+
+    complate Header
+
+[33mcommit 2c4f778cfaddca7ef7d4894395317adf64cbfa5d[m
+Author: amirsa025 <amirsaki06@gmail.com>
+Date:   Tue Jul 5 13:07:05 2022 +0430
+
+    complate Header
+
+[33mcommit 5e0f2246add65a64da78f39a9a645e8f1985d9a6[m[33m ([m[1;31morigin/page[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: amirsa025 <amirsaki06@gmail.com>
+Date:   Mon Jul 4 10:30:49 2022 +0430
+
+    Created a new Expo app
