@@ -4,10 +4,13 @@ import Note from "../../screens/Note";
 
 const AllNote = ({Data}) => {
     return (
-        <View>
+        <View style = {
+            styles.container
+        }>
             <FlatList
                 data={Data}
-
+                numColumns={2}
+                columnWrapperStyle={{justifyContent : "space-between"}}
                 renderItem={(ItemData) => {
                     ItemData.index;
                     return (
@@ -26,6 +29,9 @@ export default AllNote;
 const styles = StyleSheet.create({
     container : {
         backgroundColor:"#f6f1e0",
-        height : "100%",
-    }
+        flexDirection : "row"
+    },
+    tagView: {
+        flexWrap: "wrap"
+    },
 })

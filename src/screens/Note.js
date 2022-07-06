@@ -1,8 +1,8 @@
 import React from 'react';
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, Pressable, StyleSheet, Text, View} from 'react-native';
 const Note = ({text}) => {
     return (
-        <View style={styles.goalItem}>
+        <View style={styles.itemContainer}>
             <Pressable android_ripple={{color: '#ddd'}}
                        style={({item})=>item && styles.pressItems}
             >
@@ -15,14 +15,16 @@ const Note = ({text}) => {
 };
 
 export default Note;
-
+const width = Dimensions.get('window').width - 40;
 const styles = StyleSheet.create({
-    goalItem: {
-        paddingHorizontal:10,
+    itemContainer: {
         backgroundColor: "#ffd95a",
-        borderRadius: 5,
-        marginBottom: 10,
-        height: 30,
+        height: 50,
+        width: width / 2 - 10,
+        padding: 8,
+        borderRadius: 10,
+        marginHorizontal :10,
+        marginVertical : 10
     },
     pressItems : {
         opacity :0.5

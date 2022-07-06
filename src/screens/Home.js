@@ -8,9 +8,13 @@ import AllNote from "../component/AllNote/AllNote";
 const Home = ({navigation}) => {
     const {Data ,setData} = useNote();
     return (
-        <View style={styles.container}>
-            <Header navigation={navigation}/>
-        <AllNote Data={Data}/>
+        <View>
+           <View style={styles.container}>
+               <Header navigation={navigation}/>
+           </View>
+        <View style={styles.listContainer}>
+            <AllNote Data={Data}/>
+        </View>
         </View>
     );
 };
@@ -19,6 +23,11 @@ export default Home;
 const styles = StyleSheet.create({
     container : {
         backgroundColor:"#f6f1e0",
-        height : "100%",
+        height:70
+    },
+    listContainer :{
+        backgroundColor:"#f8f8e5",
+        height : "80%",
+        paddingTop : 30
     }
 })
