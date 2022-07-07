@@ -5,10 +5,16 @@ import {useNote} from "../../context/NoteProvider";
 
 const AllNote = ({Data}) => {
     const {setData} = useNote()
-    const deleteGoalHandler =(id)=>{
+    const deleteHandler =(id)=>{
         setData(currentGoal=>{
             return currentGoal.filter(item=>item.id !== id)
         })
+    }
+    const renderItem=(ItemData) => {
+        ItemData.index;
+        return (
+            <Note deleteNote={deleteHandler} id={ItemData.item.id} text={ItemData.item.text} />
+        );
     }
     return (
         <View style = {
@@ -18,12 +24,7 @@ const AllNote = ({Data}) => {
                 data={Data}
                 numColumns={2}
                 columnWrapperStyle={{justifyContent : "space-between"}}
-                renderItem={(ItemData) => {
-                    ItemData.index;
-                    return (
-                        <Note    deleteNote={deleteGoalHandler} id={ItemData.item.id} text={ItemData.item.text} />
-                    );
-                }}
+                renderItem={renderItem}
                 style={styles.scrollView}
                 keyExtractor={(item) => item.id}
             ></FlatList>

@@ -1,17 +1,18 @@
 import React from 'react';
 import {Dimensions, Pressable, StyleSheet, Text, View} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+
 const Note = ({text,deleteNote ,id}) => {
     return (
         <View style={styles.itemContainer}>
-            <Pressable android_ripple={{color: '#ddd'}} style={({item})=>item && styles.pressItems}>
-                <View style={styles.iconContainer}>
+            <Pressable android_ripple={{color: '#ddd'}} style={({item})=>item && styles.pressItems} >
+                <View style={styles.NoteContainer}>
                     <Text style={styles.text}>{text}</Text>
-                  <View style={[styles.iconContainer]}>
-                      <AntDesign name="edit" size={16} color="black" style={styles.styleContainerIcon} />
-                      <AntDesign name="delete" size={16} color="black"   onPress={deleteNote.bind(this,id)} />
-                  </View>
+                    <View style = {styles.iconContainer}>>
+                        <AntDesign name="delete" size={16} color="black" onPress={deleteNote.bind(this,id)} />
+                    </View>
                 </View>
+
             </Pressable>
         </View>
     );
@@ -36,13 +37,12 @@ const styles = StyleSheet.create({
         color: "#2c2c2c",
         padding: 6
     },
+    NoteContainer : {
+       flexDirection  : "row",
+        alignItems : "center",
+        justifyContent : "space-between"
+    },
     iconContainer : {
         flexDirection : "row",
-        alignItems : "center",
-        justifyContent : "space-between",
-    },
-    styleContainerIcon :{
-      marginRight:5,
-        width:25,
     }
 })
