@@ -1,11 +1,9 @@
 import React from 'react';
 import {Dimensions, Pressable, StyleSheet, Text, View} from 'react-native';
-const Note = ({text}) => {
+const Note = ({text,deleteNote ,id}) => {
     return (
         <View style={styles.itemContainer}>
-            <Pressable android_ripple={{color: '#ddd'}}
-                       style={({item})=>item && styles.pressItems}
-            >
+            <Pressable android_ripple={{color: '#ddd'}} style={({item})=>item && styles.pressItems} onPress={deleteNote.bind(this,id)}>
                 <View>
                     <Text style={styles.text}>{text}</Text>
                 </View>

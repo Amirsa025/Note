@@ -1,8 +1,15 @@
 import React from 'react';
 import {FlatList, StyleSheet, View} from "react-native";
 import Note from "../../screens/Note";
+import {useNote} from "../../context/NoteProvider";
 
 const AllNote = ({Data}) => {
+    const {setData} = useNote()
+    const deleteGoalHandler =(id)=>{
+        setData(currentGoal=>{
+            return currentGoal.filter(item=>item.id !== id)
+        })
+    }
     return (
         <View style = {
             styles.container
@@ -14,7 +21,7 @@ const AllNote = ({Data}) => {
                 renderItem={(ItemData) => {
                     ItemData.index;
                     return (
-                        <Note id={ItemData.item.id} text={ItemData.item.text} />
+                        <Note    deleteNote={deleteGoalHandler} id={ItemData.item.id} text={ItemData.item.text} />
                     );
                 }}
                 style={styles.scrollView}
@@ -28,10 +35,6 @@ export default AllNote;
 
 const styles = StyleSheet.create({
     container : {
-        backgroundColor:"#f6f1e0",
         flexDirection : "row"
-    },
-    tagView: {
-        flexWrap: "wrap"
     },
 })
