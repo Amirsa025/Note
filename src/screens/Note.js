@@ -5,15 +5,16 @@ import { AntDesign } from '@expo/vector-icons';
 const Note = ({text,deleteNote ,id}) => {
     return (
         <View style={styles.itemContainer}>
-            <Pressable android_ripple={{color: '#ddd'}} style={({item})=>item && styles.pressItems} >
+
                 <View style={styles.NoteContainer}>
                     <Text style={styles.text}>{text}</Text>
-                    <View style = {styles.iconContainer}>>
-                        <AntDesign name="delete" size={16} color="black" onPress={deleteNote.bind(this,id)} />
+                    <View style = {styles.iconContainer}>
+                        <AntDesign name="delete" size={16} color="black" onPress={deleteNote.bind(this,id)} style = {styles.width} />
+                        <AntDesign name="edit" size={16} color="black"  />
                     </View>
                 </View>
 
-            </Pressable>
+
         </View>
     );
 };
@@ -44,5 +45,8 @@ const styles = StyleSheet.create({
     },
     iconContainer : {
         flexDirection : "row",
+    },
+    width :{
+        width :30
     }
 })
