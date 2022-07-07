@@ -18,8 +18,7 @@ const Header = ({navigation}) => {
 export default Header;
 const styles = StyleSheet.create({
     container : {
-        flex : 1,
-        backgroundColor:"#f8f8de",
+        backgroundColor:"#efef8a",
         height : "100%",
     },
     header : {

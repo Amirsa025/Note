@@ -22,7 +22,6 @@ const CreateNote = ({navigation}) => {
         }
         else {
             setData([...Data,{text:note,id:Math.random().toString()}]);
-            Alert.alert('Data Added Successfully...');
             navigation.goBack()
             setNote("")
         }
