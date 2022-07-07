@@ -10,6 +10,12 @@ const AllNote = ({Data}) => {
             return currentGoal.filter(item=>item.id !== id)
         })
     }
+    const renderItem=(ItemData) => {
+        ItemData.index;
+        return (
+            <Note deleteNote={deleteHandler} id={ItemData.item.id} text={ItemData.item.text} />
+        );
+    }
     return (
         <View style = {
             styles.container
@@ -18,12 +24,7 @@ const AllNote = ({Data}) => {
                 data={Data}
                 numColumns={2}
                 columnWrapperStyle={{justifyContent : "space-between"}}
-                renderItem={(ItemData) => {
-                    ItemData.index;
-                    return (
-                        <Note deleteNote={deleteHandler} id={ItemData.item.id} text={ItemData.item.text} />
-                    );
-                }}
+                renderItem={renderItem}
                 style={styles.scrollView}
                 keyExtractor={(item) => item.id}
             ></FlatList>
