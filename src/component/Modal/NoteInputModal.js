@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Alert, Pressable, Text, View ,Modal,StyleSheet} from "react-native";
-
+import { AntDesign } from '@expo/vector-icons';
 const ModalNote = ({modalVisible,setModalVisible}) => {
+    const [title, setTitle] = useState('');
     return (
         <View style={styles.centeredView}>
             <Modal
@@ -16,11 +17,17 @@ const ModalNote = ({modalVisible,setModalVisible}) => {
                 <View style={styles.centeredView}>
                     <View style={styles.modalView}>
                         <Pressable
-                            style={[styles.button, styles.buttonClose]}
                             onPress={() => setModalVisible(!modalVisible)}
                         >
-                            <Text style={styles.textStyle}>Hide Modal</Text>
+                            <AntDesign name="close" size={16} color="black" />
                         </Pressable>
+
+                        <View style={styles.ContetModalContainer}>
+                            <Text>A</Text>
+                        </View>
+                    </View>
+                    <View>
+
                     </View>
                 </View>
             </Modal>
@@ -32,17 +39,15 @@ export default ModalNote;
 
 const styles = StyleSheet.create({
     centeredView: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: 22
+        justifyContent : "center",
+        marginTop : 250,
+        width : "100%",
     },
     modalView: {
-        margin: 20,
+        margin: 10,
         backgroundColor: "white",
-        borderRadius: 20,
-        padding: 35,
-        alignItems: "center",
+        borderRadius: 10,
+        padding:15,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -69,5 +74,8 @@ const styles = StyleSheet.create({
     modalText: {
         marginBottom: 15,
         textAlign: "center"
+    },
+    ContetModalContainer : {
+        paddingTop:10
     }
 })

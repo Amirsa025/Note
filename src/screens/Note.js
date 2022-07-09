@@ -1,10 +1,11 @@
 import React from 'react';
 import {Dimensions, Pressable, StyleSheet, Text, View, Alert} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import ModalNote from "../component/Modal/Modal";
+import ModalNote from "../component/Modal/NoteInputModal";
 
 const Note = ({text,deleteNote ,id}) => {
     const [modalVisible, setModalVisible] = React.useState(false);
+
     return (
         <View style={styles.itemContainer}>
                 <View style={styles.NoteContainer}>

@@ -6,7 +6,7 @@ const Header = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <TouchableOpacity onPress={()=>navigation.push("newNote")}>
+                <TouchableOpacity onPress={()=>navigation.navigate("newNote")}>
                     <Entypo name="new-message" size={20} color="#2e2e2e" />
                 </TouchableOpacity>
                 <Text style={styles.headerText}> Note</Text>
