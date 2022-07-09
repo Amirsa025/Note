@@ -1,9 +1,9 @@
 import React from 'react';
-import {Dimensions, Pressable, StyleSheet, Text, View, Alert} from 'react-native';
+import {Dimensions, StyleSheet, Text, View} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import ModalNote from "../component/Modal/NoteInputModal";
 
-const Note = ({text,deleteNote ,id}) => {
+const Note = ({text,deleteNote ,id ,navigation}) => {
     const [modalVisible, setModalVisible] = React.useState(false);
 
     return (
@@ -16,7 +16,7 @@ const Note = ({text,deleteNote ,id}) => {
                     </View>
                 </View>
 
-                <ModalNote setModalVisible={setModalVisible} modalVisible={modalVisible}  />
+                <ModalNote text={text} id={id} navigation={navigation} setModalVisible={setModalVisible} modalVisible={modalVisible}  />
         </View>
     );
 };

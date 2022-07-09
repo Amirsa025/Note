@@ -3,7 +3,7 @@ import {FlatList, StyleSheet, View} from "react-native";
 import Note from "../../screens/Note";
 import {useNote} from "../../context/NoteProvider";
 
-const AllNote = ({Data}) => {
+const AllNote = ({Data,navigation}) => {
     const {setData} = useNote()
     const deleteHandler =(id)=>{
         setData(currentGoal=>{
@@ -13,7 +13,7 @@ const AllNote = ({Data}) => {
     const renderItem=(ItemData) => {
         ItemData.index;
         return (
-            <Note deleteNote={deleteHandler} id={ItemData.item.id} text={ItemData.item.text} />
+            <Note  navigation={navigation} deleteNote={deleteHandler} id={ItemData.item.id} text={ItemData.item.text} />
         );
     }
     return (

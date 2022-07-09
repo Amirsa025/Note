@@ -7,6 +7,7 @@ import Home from "./src/screens/Home";
 import CreateNote from "./src/screens/createNote";
 import React from "react";
 import NoteProvider from "./src/context/NoteProvider";
+import EditNote from "./src/screens/EditNote";
 export default function App() {
     const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,22 @@ export default function App() {
                         },
                     }}>
                         {props => <CreateNote {...props} />}
+                    </Stack.Screen>
+
+                    <Stack.Screen name="EditNote"  options={{
+                        title: 'New a note', 
+                        headerStyle: {
+                            backgroundColor: '#ffd95a',
+                            textAlign : 'center'
+                        },
+                        headerTintColor: '#ececec',
+                        headerTitleStyle: {
+                            fontWeight: 'bold',
+                            width :100,
+                            TextAlign: 'center'
+                        },
+                    }}>
+                        {props => <EditNote {...props} />}
                     </Stack.Screen>
 
                 </Stack.Navigator>

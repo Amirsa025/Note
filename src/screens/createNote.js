@@ -21,7 +21,7 @@ const CreateNote = ({navigation}) => {
             Alert.alert('TextInput is Empty, Please Enter Some Value To Continue...');
         }
         else {
-            setData([...Data,{text:note,id:Math.random().toString()}]);
+            setData([...Data,{text:note,id: Math.floor(Math.random() * 100).toString()}]);
             navigation.goBack()
             setNote("")
         }

@@ -6,14 +6,14 @@ import AllNote from "../component/AllNote/AllNote";
 
 
 const Home = ({navigation}) => {
-    const {Data ,setData} = useNote();
+    const {Data} = useNote();
     return (
         <View>
            <View style={styles.container}>
                <Header navigation={navigation}/>
            </View>
         <View style={styles.listContainer}>
-            <AllNote Data={Data}/>
+            <AllNote navigation={navigation} Data={Data}/>
         </View>
         </View>
     );
