@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import React from 'react';
 import {
     Alert,
@@ -21,9 +22,13 @@ const CreateNote = ({navigation}) => {
             Alert.alert('TextInput is Empty, Please Enter Some Value To Continue...');
         }
         else {
-            setData([...Data,{text:note,id: Math.floor(Math.random() * 100).toString()}]);
+            const item ={text:note,id:Math.floor(Math.random()*100,)}
+            const updateNote=[...Data,item]
+            
+            setData(updateNote)
             navigation.goBack()
-            setNote("")
+            setNote(" ")
+           
         }
     }
 

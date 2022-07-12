@@ -1,11 +1,34 @@
-import React, { useState } from "react";
-import { Alert, Pressable, Button, View, Modal, StyleSheet } from "react-native";
+import React, { useState, useEffect } from "react";
+import {
+  Alert,
+  Pressable,
+  Button,
+  View,
+  Modal,
+  StyleSheet,
+  TextInput,
+} from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-const ModalNote = ({ modalVisible, setModalVisible  ,navigation ,text, id }) => {
+const ModalNote = ({ modalVisible, setModalVisible, text, saveEdit  ,isEdit }) => {
+  const [desc, setDesc] = React.useState("");
+
+  useEffect(() => {
+    {!isEdit?  setDesc(text) :null}
+  }, [isEdit]);
+
+
+  const handleSaveEdit = () => {
+    setModalVisible(!modalVisible);
+    saveEdit(desc);
+  };
+
+  const HandleChangeText = (text, valueFor) => {
+    if (valueFor === "desc") setDesc(text);
+  };
   return (
     <View style={styles.centeredView}>
       <Modal
-        animationType="slide"
+        animationType="fade"
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
@@ -16,20 +39,25 @@ const ModalNote = ({ modalVisible, setModalVisible  ,navigation ,text, id }) => 
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Pressable onPress={() => setModalVisible(!modalVisible)}>
+              {/*close icon*/}
               <AntDesign name="close" size={16} color="black" />
             </Pressable>
 
             <View style={styles.ContetModalContainer}>
-            <Button
-               title="Go to Details"
-              onPress={() => navigation.navigate('EditNote',{
-                id : id,
-                text : text
-              })}
-      />
+              <TextInput
+               value={desc}
+               multiline
+               placeholder='Note'
+                onChangeText={(EnterText) =>
+                  HandleChangeText(EnterText, "desc")
+                }
+              />
+              <Button
+                title={"Save Edit"}
+                onPress={(text) => handleSaveEdit(text)}
+              />
             </View>
           </View>
-          <View></View>
         </View>
       </Modal>
     </View>

@@ -6,19 +6,11 @@ const noteContext = createContext();
 
 const NoteProvider = ({children}) =>{
     const [Data, setData] = React.useState([])
-    const findNotes = async () => {
-        const result = await AsyncStorage.getItem('notes');
-        if (result !== null) setData(JSON.parse(result));
-    };
-
-    useEffect(() => {
-        findNotes()
-    }, []);
 
 
 
     return(
-        <noteContext.Provider value={{Data , setData,findNotes}}>
+        <noteContext.Provider value={{Data , setData}}>
             {children}
         </noteContext.Provider>
     )
