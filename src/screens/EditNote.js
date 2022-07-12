@@ -1,21 +1,24 @@
-import { View, Text ,StyleSheet } from "react-native";
-import React, { useEffect, useCallback, useState } from "react";
-import { useFocusEffect } from "@react-navigation/native";
-
+import {View, Text, StyleSheet} from "react-native";
+import React, {  useState } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import NoteInputModal from "../component/Modal/NoteInputModal";
 import { Entypo } from "@expo/vector-icons";
 import { useNote } from "../context/NoteProvider";
 const EditNote = ({ route, navigation }) => {
   const id = route.params.id;
   const text = route.params.text;
-  const { Data, setData } = useNote();
+  const { setData } = useNote();
   const [modalVisible, setModalVisible] = React.useState(false);
-  const saveEdit = (newText) => {
-    const temp = [...Data];
+  const saveEdit = async (newText) => {
+      const result = await AsyncStorage.getItem('note_Key');
+      let note = [];
+      if (result !== null) note = JSON.parse(result);
+    const temp = [...note];
     const index = temp.findIndex((data) => data.id === id);
     temp[index].text = newText;
       setData( [...temp])
       navigation.goBack();
+
 
   };
 
