@@ -35,7 +35,7 @@ export default function App() {
                     </Stack.Screen>
 
                     <Stack.Screen name="EditNote"  options={{
-                        title: 'New a note', 
+                        title: 'New a note',
                         headerStyle: {
                             backgroundColor: '#ffd95a',
                             textAlign : 'center'
@@ -70,7 +70,7 @@ const option =    {
         backgroundColor: '#ffd95a',
         textAlign : 'center'
     },
-    headerTintColor: '#ececec',
+    headerTintColor: '#ffffff',
     headerTitleStyle: {
         fontWeight: 'bold',
         width :100,

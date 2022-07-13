@@ -4,8 +4,6 @@ import {AntDesign} from '@expo/vector-icons';
 import ModalNote from "../component/Modal/NoteInputModal";
 
 const Note = ({text, deleteNote, id, navigation}) => {
-
-
     return (
         <View style={styles.itemContainer}>
             <View style={styles.NoteContainer}>
@@ -16,7 +14,7 @@ const Note = ({text, deleteNote, id, navigation}) => {
                     })}>{text}</Text>
                 </View>
                 <View style={styles.iconContainer}>
-                    <AntDesign name="delete" size={16} color="black" onPress={deleteNote.bind(this, id)}
+                    <AntDesign name="delete" size={16} color="black" onPress={()=>deleteNote(id)}
                                style={styles.width}/>
                     <AntDesign name="edit" size={16} color="black" onPress={() => navigation.navigate("EditNote", {
                         id: id,
