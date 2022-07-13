@@ -17,9 +17,8 @@ const EditNote = ({ route, navigation }) => {
     const index = temp.findIndex((data) => data.id === id);
     temp[index].text = newText;
       setData( [...temp])
+      await AsyncStorage.setItem('note_Key' ,JSON.stringify(temp))
       navigation.goBack();
-
-
   };
 
   return (
